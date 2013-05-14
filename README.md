@@ -7,7 +7,7 @@ Just another another (another) url slug creation plugin for jQuery.
 Download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.min.js
-[max]: https://raw.github.com/madlow/jquery-slugify/master/dist/slugify.js
+[max]: https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.js
 
 In your web page:
 

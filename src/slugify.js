@@ -27,7 +27,7 @@
         $.each(options.replaceMap, function(key, value) { // Special char map
             sourceString = sourceString.replace(new RegExp(key, 'g'), value);
         });
-        return sourceString.toLowerCase()
+        return sourceString
                 .replace(/\s+/g, options.whitespace) // Replace whitespace characters
                 .replace(/[^a-z0-9 \-]/g, options.invalid); // Replace invalid characters
     };

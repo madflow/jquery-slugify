@@ -1,4 +1,4 @@
-/*! Slugify - v0.1.0 - 2013-05-14
+/*! Slugify - v0.1.0 - 2013-05-15
 * https://github.com/madflow/jquery-slugify
 * Copyright (c) 2013 madflow; Licensed MIT */
 ;(function($) {
@@ -8,7 +8,16 @@
             var $target = $(this),
                 $source = $(source);
 
-            $source.on('keyup change ',function() {
+            $target.on('keyup change ',function() {
+                if($target.val() !== '' && $target.val() !== undefined) {
+                    $target.data('locked', true);
+                } else {
+                    $target.data('locked', false);
+                }
+            });
+
+            $source.on('keyup change',function() {
+                if( true === $target.data('locked')) {return;}
                 $target.val($.slugify($source.val(), options));
             });
         });
@@ -23,14 +32,13 @@
         $.each(options.replaceMap, function(key, value) { // Special char map
             sourceString = sourceString.replace(new RegExp(key, 'g'), value);
         });
-        return sourceString.toLowerCase()
+        return sourceString
                 .replace(/\s+/g, options.whitespace) // Replace whitespace characters
-                .replace(/[^a-z0-9 \-]/g, options.invalid); // Replace invalid characters
+                .replace(new RegExp('[^a-z0-9 '+ options.whitespace +']', 'g'), options.invalid); // Replace invalid characters
     };
 
     // Default options
     $.slugify.options = {
-        maxLength: 999,
         whitespace: '-',
         invalid: '',
         replaceMap: {

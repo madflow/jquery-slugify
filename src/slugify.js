@@ -21,7 +21,7 @@
             });
 
             $source.on('keyup change',function() {
-                if( true === $target.data('locked')) {return;};
+                if( true === $target.data('locked')) {return;}
                 $target.val($.slugify($source.val(), options));
             });
         });
@@ -38,12 +38,11 @@
         });
         return sourceString
                 .replace(/\s+/g, options.whitespace) // Replace whitespace characters
-                .replace(/[^a-z0-9 \-]/g, options.invalid); // Replace invalid characters
+                .replace(new RegExp('[^a-z0-9 '+ options.whitespace +']', 'g'), options.invalid); // Replace invalid characters
     };
 
     // Default options
     $.slugify.options = {
-        maxLength: 999,
         whitespace: '-',
         invalid: '',
         replaceMap: {

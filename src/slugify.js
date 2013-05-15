@@ -12,7 +12,16 @@
             var $target = $(this),
                 $source = $(source);
 
-            $source.on('keyup change ',function() {
+            $target.on('keyup change ',function() {
+                if($target.val() !== '' && $target.val() !== undefined) {
+                    $target.data('locked', true);
+                } else {
+                    $target.data('locked', false);
+                }
+            });
+
+            $source.on('keyup change',function() {
+                if( true === $target.data('locked')) {return;};
                 $target.val($.slugify($source.val(), options));
             });
         });

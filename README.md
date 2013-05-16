@@ -17,8 +17,8 @@ In your web page:
 <script src="jquery.js"></script>
 <script src="dist/slugify.min.js"></script>
 
-<input type ="text" value="" id="slug-source" />
-<input type ="text" value="" id="slug-target" />
+<input type ="text" value="" id="slug-source" /> <!-- The text to be slugged -->
+<input type ="text" value="" id="slug-target" /> <!-- The processed text as slug -->
 
 <script>
 jQuery(function($) {

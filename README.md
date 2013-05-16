@@ -16,9 +16,14 @@ In your web page:
 ```html
 <script src="jquery.js"></script>
 <script src="dist/slugify.min.js"></script>
+
+<input type ="text" value="" id="slug-source" />
+<input type ="text" value="" id="slug-target" />
+
 <script>
 jQuery(function($) {
   $.slugify("Ätschi Bätschi"); // "aetschi-baetschi"
+  $('#slug-target').slugify('#slug-source'); // Type as you slug
 });
 </script>
 ```

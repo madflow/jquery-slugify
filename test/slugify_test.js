@@ -83,6 +83,15 @@
         ok($('#slug-target').data('locked'), '"locked" is in data object');
     });
     
+    test('the slug field is a span', function() {
+        expect(2);
+        $('#slug-target-span').slugify('#slug-source');
+        $('#slug-source').val('Hello Span!').trigger('keyup');
+        equal($('#slug-target-span').text(), 'hello-span', "Slug added to span correctly");
+        $('#slug-source').val('Hello Spanner!').trigger('change');
+        equal($('#slug-target-span').text(), 'hello-spanner', "Slug added to span correctly again");
+    });
+    
     QUnit.testDone(function() {
         $('#slug-target').val('');
         $('#slug-source').val('');

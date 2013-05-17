@@ -11,8 +11,8 @@
         return this.each(function() {
             var $target = $(this),
                 $source = $(source);
-
-            $target.on('keyup change ',function() {
+                
+            $target.on('keyup change',function() {
                 if($target.val() !== '' && $target.val() !== undefined) {
                     $target.data('locked', true);
                 } else {
@@ -22,7 +22,11 @@
 
             $source.on('keyup change',function() {
                 if( true === $target.data('locked')) {return;}
-                $target.val($.slugify($source.val(), options));
+                if($target.is('input') || $target.is('textarea')) {
+                    $target.val($.slugify($source.val(), options));
+                } else {
+                    $target.text($.slugify($source.val(), options));
+                }
             });
         });
     };

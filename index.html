@@ -50,8 +50,24 @@
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
       </section>
-    </div>
+            
+            <section id="main_demo">
+                <input type ="text" value="" id="slug-source" />
+                <input type ="text" value="" id="slug-target" />
+            </section>
+            
+        </div>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.min.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+              $.slugify("Ätschi Bätschi"); // "aetschi-baetschi"
+              $('#slug-target').slugify('#slug-source'); // Type as you slug
+            });
+        </script>
     
+
   </body>
 </html>

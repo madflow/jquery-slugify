@@ -15,7 +15,7 @@
 
     <header>
       <div class="container">
-        <h1>Jquery-slugify</h1>
+        <h1>jquery-slugify</h1>
         <h2>Just another another (another) url slug creation plugin for jQuery.</h2>
 
         <section id="downloads">
@@ -50,20 +50,26 @@
 <span class="nt">&lt;/script&gt;</span>
 </pre></div>
       </section>
+
+      <h2>Demo</h2>
             
-            <section id="main_demo">
+            <p>
+                <label for="slug-source">Title</label>
                 <input type ="text" value="" id="slug-source" />
+              </p>
+              <p>
+                <label for="slug-target">Slug</label>
                 <input type ="text" value="" id="slug-target" />
-            </section>
+              </p>
             
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.min.js"></script>
+        <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/slugify.min.js"></script>
         
         <script>
             $(document).ready(function() {
-              $.slugify("Ätschi Bätschi"); // "aetschi-baetschi"
+              console.log($.slugify("Ätschi Bätschi")); // "aetschi-baetschi"
               $('#slug-target').slugify('#slug-source'); // Type as you slug
             });
         </script>

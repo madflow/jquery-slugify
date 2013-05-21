@@ -245,3 +245,12 @@ a {
 .cf {
   zoom:1;
 }
+
+.demo-fields label {
+  float:left;
+  width:100px;
+}
+.demo-fields input[type=text] {
+  float:left;
+  margin-left:150px;
+}

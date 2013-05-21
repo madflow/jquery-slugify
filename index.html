@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Jquery-slugify by madflow</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Jquery-slugify</h1>
+        <h2>Just another another (another) url slug creation plugin for jQuery.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/madflow/jquery-slugify/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/madflow/jquery-slugify/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/madflow/jquery-slugify" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p>Just another another (another) url slug creation plugin for jQuery.</p>
+
+<h2>Getting Started</h2>
+
+<p>Download the <a href="https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.min.js">production version</a> or the <a href="https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.js">development version</a>.</p>
+
+<p>In your web page:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"dist/slugify.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;input</span> <span class="na">type =</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"slug-source"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- The text to be slugged --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type =</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"slug-target"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- The processed text as slug --&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">slugify</span><span class="p">(</span><span class="s2">"Ätschi Bätschi"</span><span class="p">);</span> <span class="c1">// "aetschi-baetschi"</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'#slug-target'</span><span class="p">).</span><span class="nx">slugify</span><span class="p">(</span><span class="s1">'#slug-source'</span><span class="p">);</span> <span class="c1">// Type as you slug</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+      </section>
+    </div>
+
+    
+  </body>
+</html>

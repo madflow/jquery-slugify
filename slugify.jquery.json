@@ -1,8 +1,8 @@
 {
   "name": "slugify",
-  "title": "Slugify",
+  "title": "jQuery Slugify",
   "description": "Just another another (another) url slug creation plugin for jQuery.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/madflow/jquery-slugify",
   "author": {
     "name": "madflow"
@@ -19,7 +19,7 @@
     }
   ],
   "dependencies": {
-    "jquery": "*"
+    "jquery": ">=1.7" 
   },
-  "keywords": ["slugs slug slugify"]
+  "keywords": ["slugify","slugs","strings"]
 }

@@ -5,8 +5,7 @@
  * Licensed under the MIT license.
  */
 
-;
-(function($) {
+;(function($) {
 
     $.fn.slugify = function(source, options) {
         return this.each(function() {

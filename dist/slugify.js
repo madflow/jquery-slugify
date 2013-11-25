@@ -1,4 +1,4 @@
-/*! jQuery Slugify - v1.0.2 - 2013-11-15
+/*! jQuery Slugify - v1.0.3 - 2013-11-25
 * https://github.com/madflow/jquery-slugify
 * Copyright (c) 2013 madflow; Licensed MIT */
 ;(function($) {
@@ -6,7 +6,7 @@
     $.fn.slugify = function(source, options) {
         return this.each(function() {
             var $target = $(this),
-                    $source = $(source);
+                $source = $(source);
 
             $target.on('keyup change', function() {
                 if ($target.val() !== '' && $target.val() !== undefined) {
@@ -33,20 +33,36 @@
     $.slugify = function(sourceString, options) {
         // Override default options with passed-in options.
         options = $.extend({}, $.slugify.options, options);
+
+        // Apply preSlug function - if exists
+        if (typeof options.preSlug === 'function') {
+            sourceString = options.preSlug(sourceString);
+        }
+
         sourceString = $.trim(sourceString); // Trim
-        sourceString = sourceString.toLowerCase();  // Lower Case
+        sourceString = sourceString.toLowerCase(); // Lower Case
         $.each(options.replaceMap, function(key, value) { // Special char map
             sourceString = sourceString.replace(new RegExp(key, 'g'), value || options.invalid);
         });
-        return sourceString
-                .replace(/\s+/g, options.whitespace) // Replace whitespace characters
-                .replace(new RegExp('[^a-z0-9 ' + options.whitespace + ']', 'g'), options.invalid); // Replace invalid characters
+
+        sourceString = sourceString
+            .replace(/\s+/g, options.whitespace) // Replace whitespace characters
+            .replace(new RegExp('[^a-z0-9 ' + options.whitespace + ']', 'g'), options.invalid); // Replace invalid characters
+
+        // Apply postSlug function - if exists
+        if (typeof options.postSlug === 'function') {
+            sourceString = options.postSlug(sourceString);
+        }
+
+        return sourceString;
     };
 
     // Default options
     $.slugify.options = {
         whitespace: '-',
         invalid: '',
+        preSlug: null,
+        postSlug: null,
         replaceMap: {
             'á': 'a',
             'à': 'a',

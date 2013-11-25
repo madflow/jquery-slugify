@@ -1,12 +1,16 @@
 [![Build Status](https://travis-ci.org/madflow/jquery-slugify.png?branch=master)](https://travis-ci.org/madflow/jquery-slugify)
 
-# Slugify
+# jQuery Slugify
 
 Just another another (another) url slug creation plugin for jQuery.
 
 ## Getting Started
 
-Download the [production version][min] or the [development version][max].
+You can install the plugin using Bower
+
+    bower install jquery-slugify
+
+You can download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.min.js
 [max]: https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.js

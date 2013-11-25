@@ -92,6 +92,24 @@
         equal($('#slug-target-span').text(), 'hello-spanner', "Slug added to span correctly again");
     });
     
+    test('test the preSlug postSlug callbacks', function() {
+
+        expect(2);
+
+        strictEqual($.slugify('a', {
+            postSlug: function(sourceString) {
+                return sourceString.toUpperCase();
+            }
+        }), 'A', 'Uppercase postSlug');
+
+        strictEqual($.slugify('a', {
+            postSlug: function(sourceString) {
+                return sourceString + 'rsch';
+            }
+        }), 'arsch', 'Naughty word appendend preSlug');
+    });
+
+
     QUnit.testDone(function() {
         $('#slug-target').val('');
         $('#slug-source').val('');

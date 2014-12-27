@@ -1,6 +1,6 @@
-/*! jQuery Slugify - v1.0.3 - 2013-11-25
+/*! jQuery Slugify - v1.0.3 - 2014-12-27
 * https://github.com/madflow/jquery-slugify
-* Copyright (c) 2013 madflow; Licensed MIT */
+* Copyright (c) 2014 madflow; Licensed MIT */
 ;(function($) {
 
     $.fn.slugify = function(source, options) {

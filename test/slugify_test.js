@@ -91,6 +91,17 @@
         $('#slug-source').val('Hello Spanner!').trigger('change');
         equal($('#slug-target-span').text(), 'hello-spanner', "Slug added to span correctly again");
     });
+
+    test('test for empty string in replacemap value', function() {
+        expect(1);
+        var options = {
+            replaceMap: {
+                'invalid': '-',
+                '!':''
+            }
+        };
+        strictEqual($.slugify('Yo!Man ', options), 'yoman', 'test for empty string in replacemap value');
+    });
     
     test('test the preSlug postSlug callbacks', function() {
 

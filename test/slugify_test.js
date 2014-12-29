@@ -116,6 +116,15 @@
         strictEqual($.slugify('Yo!Man ', options), 'yo-man', 'test for invalid string in replacemap value');
     });
 
+    test('test russian Ъ', function() {
+        expect(1);
+        var options = {
+            'invalid': '-',
+            'whitespace': '_'
+        };
+        strictEqual($.slugify('объезд', options), 'obezd', 'test russian Ъ');
+    });
+
     test('test the preSlug postSlug callbacks', function() {
 
         expect(2);

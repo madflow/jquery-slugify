@@ -125,6 +125,15 @@
         strictEqual($.slugify('объезд', options), 'obezd', 'test russian Ъ');
     });
 
+    test('test dollar sign', function() {
+        expect(1);
+        var options = {
+            'invalid': '-',
+            'whitespace': '_'
+        };
+        strictEqual($.slugify('Micro$soft please go suck an egg', options), 'microusdsoft_please_go_suck_an_egg', 'test $ sign');
+    });
+
     test('test the preSlug postSlug callbacks', function() {
 
         expect(2);

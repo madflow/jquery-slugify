@@ -1,4 +1,4 @@
-/*! jQuery Slugify - v1.0.3 - 2014-12-27
+/*! jQuery Slugify - v1.0.3 - 2014-12-29
 * https://github.com/madflow/jquery-slugify
 * Copyright (c) 2014 madflow; Licensed MIT */
 ;(function($) {
@@ -42,7 +42,7 @@
         sourceString = $.trim(sourceString); // Trim
         sourceString = sourceString.toLowerCase(); // Lower Case
         $.each(options.replaceMap, function(key, value) { // Special char map
-            sourceString = sourceString.replace(new RegExp(key, 'g'), value || options.invalid);
+            sourceString = sourceString.replace(new RegExp(key, 'g'), value);
         });
 
         sourceString = sourceString

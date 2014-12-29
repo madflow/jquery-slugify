@@ -46,7 +46,7 @@
         sourceString = $.trim(sourceString); // Trim
         sourceString = sourceString.toLowerCase(); // Lower Case
         $.each(options.replaceMap, function(key, value) { // Special char map
-            sourceString = sourceString.replace(new RegExp(key, 'g'), value || options.invalid);
+            sourceString = sourceString.replace(new RegExp(key, 'g'), value);
         });
 
         sourceString = sourceString
@@ -611,7 +611,7 @@
             'ш': 'sh',
             'щ': 'sh',
             'ы': 'i',
-            ' ': '',
+            'ь': '',
             'э': 'e',
             'ю': 'yu',
             'я': 'ya',

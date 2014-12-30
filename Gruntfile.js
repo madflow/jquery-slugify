@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       dist: {
         src: ['src/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.js'
-      },
+      }
     },
     uglify: {
       options: {
@@ -32,10 +32,16 @@ module.exports = function(grunt) {
       dist: {
         src: '<%= concat.dist.dest %>',
         dest: 'dist/<%= pkg.name %>.min.js'
-      },
+      }
     },
     qunit: {
-      files: ['test/**/*.html']
+      all: {
+        options: {
+          urls: ['1.7.2','1.8.3','1.9.1','1.10.2','1.11.2','2.0.3', '2.1.3'].map(function(version) {
+            return 'http://localhost:<%= connect.server.options.port %>/test/slugify.html?jquery=' + version;
+          })
+        }
+      }
     },
     jshint: {
       gruntfile: {
@@ -55,7 +61,7 @@ module.exports = function(grunt) {
           jshintrc: 'test/.jshintrc'
         },
         src: ['test/**/*.js']
-      },
+      }
     },
     watch: {
       gruntfile: {
@@ -69,8 +75,16 @@ module.exports = function(grunt) {
       test: {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'qunit']
-      },
+      }
     },
+    connect: {
+      server: {
+        options: {
+          port: 4321,
+          hostname: 'localhost'
+        }
+      }
+    }
   });
 
   // These plugins provide necessary tasks.
@@ -80,8 +94,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify']);
+  grunt.registerTask('default', ['connect', 'jshint', 'qunit', 'clean', 'concat', 'uglify']);
+  // Test task
+  grunt.registerTask('test', ['connect', 'jshint', 'qunit']);
+
 
 };

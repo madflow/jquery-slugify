@@ -44,13 +44,13 @@
             'whitespace': '_',
             'invalid': '-'
         };
-        strictEqual($.slugify('!Hello    good      Sir!   ', options), '-hello_good_sir-', 'Custom options');
+        strictEqual($.slugify('!Hello    good      Sir!   ', options), 'hello_good_sir', 'Custom options');
 
         options = {
             'whitespace': '+',
             'invalid': '#'
         };
-        strictEqual($.slugify('!Hello    good      Sir!   ', options), '#hello+good+sir#', 'Custom options 2');
+        strictEqual($.slugify('!Hello!    good      !Sir!   ', options), 'hello#+good+#sir', 'Custom options 2');
     });
 
     test('test the DOM function on change', function() {
@@ -132,6 +132,19 @@
             'whitespace': '_'
         };
         strictEqual($.slugify('Micro$soft please go suck an egg', options), 'microusdsoft_please_go_suck_an_egg', 'test $ sign');
+    });
+
+    test('test consecutive invalid and whitespace chars', function() {
+        expect(5);
+        var options = {
+            'invalid': '-',
+            'whitespace': '_'
+        };
+        strictEqual($.slugify('  a  ', options), 'a', 'Whitespace chars trimmed');
+        strictEqual($.slugify('a   a  a', options), 'a_a_a', 'Consecutive whitespacechars deleted');
+        strictEqual($.slugify('=a=a=', options), 'a-a', 'Trailing invalid characters deleted');
+        strictEqual($.slugify('===a=====a==', options), 'a-a', 'Consecutive invalid characters deleted');
+        strictEqual($.slugify('===a== ===a==', options), 'a-_-a', 'Consecutive invalid characters deleted - whitespace reserved');
     });
 
     test('test the preSlug postSlug callbacks', function() {

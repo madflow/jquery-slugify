@@ -1,7 +1,7 @@
 /*
  * https://github.com/madflow/jquery-slugify
  *
- * Copyright (c) 2013 Florian Reiss
+ * Copyright (c) 2014 Florian Reiss
  * Licensed under the MIT license.
  */
 
@@ -52,6 +52,12 @@
         sourceString = sourceString
             .replace(/\s+/g, options.whitespace) // Replace whitespace characters
             .replace(new RegExp('[^a-z0-9 ' + options.whitespace + ']', 'g'), options.invalid); // Replace invalid characters
+
+        // Cleaner slugs, delete trailing invalid chars and consecutive invalid chars
+        sourceString = sourceString
+            .replace(new RegExp('\\' + options.invalid + '+', 'g'), options.invalid)
+            .replace(new RegExp('(^\\' + options.invalid + '+|\\' + options.invalid + '+$)', 'g'), '');
+
 
         // Apply postSlug function - if exists
         if (typeof options.postSlug === 'function') {

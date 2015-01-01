@@ -24,6 +24,7 @@
     "libs",
     "Gruntfile.js",
     "package.json",
-    "CONTRIBUTING.md"
+    "CONTRIBUTING.md",
+    "slugify.jquery.json"
   ]
 }

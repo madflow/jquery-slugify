@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
         <script src="../libs/qunit/qunit.js"></script>
         <!-- Load local lib and tests. -->
+        <script src="../node_modules/speakingurl/speakingurl.min.js"></script>
         <script src="../src/slugify.js"></script>
         <script src="slugify_test.js"></script>
         <!-- Removing access to jQuery and $. But it'll still be available as _$, if
@@ -16,15 +17,15 @@
              ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
         <script>window._$ = jQuery.noConflict(true);</script>
     </head>
-    <body> 
+    <body>
         <div>
             <input type ="text" value="" id="slug-source"/>
         </div>
         <div>
             <input type ="text" value="" id="slug-target"/>
-        </div>    
+        </div>
         <div>
             <span id="slug-target-span"></span>
-        </div> 
+        </div>
     </body>
 </html>

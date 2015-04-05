@@ -1,12 +1,12 @@
 {
   "name": "jquery-slugify",
   "description": "Just another another (another) url slug plugin for jQuery",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "main": "dist/slugify.min.js",
   "scripts": {
     "test": "grunt test"
   },
-   "keywords": [
+  "keywords": [
     "javascript",
     "jquery",
     "slugs",
@@ -14,25 +14,28 @@
     "strings",
     "jquery-plugin"
   ],
-   "licenses": [
+  "licenses": [
     {
       "type": "MIT",
       "url": "https://raw.githubusercontent.com/madflow/jquery-slugify/master/LICENSE-MIT"
     }
   ],
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git@github.com:madflow/jquery-slugify.git"
   },
   "devDependencies": {
     "connect": "~2.27.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-connect": "~0.9.0",
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-qunit": "~0.1.1",
-    "grunt-contrib-concat": "~0.1.2",
     "grunt-contrib-uglify": "~0.1.1",
-    "grunt-contrib-watch": "~0.2.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt": "~0.4.5",
-    "grunt-contrib-connect": "~0.9.0"
+    "grunt-contrib-watch": "~0.2.0"
+  },
+  "dependencies": {
+    "speakingurl": "^1.1.1"
   }
 }

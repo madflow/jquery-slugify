@@ -19,7 +19,8 @@ In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/slugify.min.js"></script>
+<script src="speakingurl.min.js"></script>
+<script src="slugify.min.js"></script>
 
 <input type ="text" value="" id="slug-source" /> <!-- The text to be slugged -->
 <input type ="text" value="" id="slug-target" /> <!-- The processed text as slug -->

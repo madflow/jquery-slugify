@@ -33,25 +33,29 @@
 
 <p>Download the <a href="https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.min.js">production version</a> or the <a href="https://raw.github.com/madflow/jquery-slugify/master/dist/slugify.js">development version</a>.</p>
 
+<p>The plugin depends on <a href="https://github.com/pid/speakingurl">speakingurl</a>.</p>
+
 <p>In your web page:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"dist/slugify.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>speakingurl.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>slugify.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 
-<span class="nt">&lt;input</span> <span class="na">type =</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"slug-source"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- The text to be slugged --&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type =</span><span class="s">"text"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"slug-target"</span> <span class="nt">/&gt;</span> <span class="c">&lt;!-- The processed text as slug --&gt;</span>
+&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span> =<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>slug-source<span class="pl-pds">"</span></span> /&gt; <span class="pl-c">&lt;!-- The text to be slugged --&gt;</span>
+&lt;<span class="pl-ent">input</span> <span class="pl-e">type</span> =<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>slug-target<span class="pl-pds">"</span></span> /&gt; <span class="pl-c">&lt;!-- The processed text as slug --&gt;</span>
 
-<span class="nt">&lt;script&gt;</span>
-<span class="nx">jQuery</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">.</span><span class="nx">slugify</span><span class="p">(</span><span class="s2">"Ätschi Bätschi"</span><span class="p">);</span> <span class="c1">// "aetschi-baetschi"</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'#slug-target'</span><span class="p">).</span><span class="nx">slugify</span><span class="p">(</span><span class="s1">'#slug-source'</span><span class="p">);</span> <span class="c1">// Type as you slug</span>
-<span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre></div>
+<span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">jQuery(<span class="pl-k">function</span>(<span class="pl-smi">$</span>) {</span>
+<span class="pl-s1">  $.slugify(<span class="pl-s"><span class="pl-pds">"</span>Ätschi Bätschi<span class="pl-pds">"</span></span>); <span class="pl-c">// "aetschi-baetschi"</span></span>
+<span class="pl-s1">  $(<span class="pl-s"><span class="pl-pds">'</span>#slug-target<span class="pl-pds">'</span></span>).slugify(<span class="pl-s"><span class="pl-pds">'</span>#slug-source<span class="pl-pds">'</span></span>); <span class="pl-c">// Type as you slug</span></span>
+<span class="pl-s1">});</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+
+
       </section>
 
       <h2>Demo</h2>
-            
+
             <p>
                 <label for="slug-source">Title</label>
                 <input type ="text" value="" id="slug-source" />
@@ -60,19 +64,20 @@
                 <label for="slug-target">Slug</label>
                 <input type ="text" value="" id="slug-target" />
               </p>
-            
+
         </div>
 
         <script src="javascripts/jquery.min.js"></script>
+        <script src="javascripts/speakingurl.min.js"></script>
         <script src="javascripts/slugify.min.js"></script>
-        
+
         <script>
             $(document).ready(function() {
               console.log($.slugify("Ätschi Bätschi")); // "aetschi-baetschi"
               $('#slug-target').slugify('#slug-source'); // Type as you slug
             });
         </script>
-    
+
 
   </body>
 </html>

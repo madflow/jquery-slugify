@@ -1,5 +1,4 @@
-/*! jQuery Slugify - v1.0.4 - 2015-04-05
-* https://github.com/madflow/jquery-slugify
+/*! jquery-slugify - v1.1.0 - 2015-04-19
 * Copyright (c) 2015 madflow; Licensed MIT */
 ;(function($) {
 
@@ -35,6 +34,10 @@
 
         // Override default options with passed-in options.
         options = $.extend({}, $.slugify.options, options);
+
+        // Guess language specifics from html.lang attribute
+        // when options.lang is not defined
+        options.lang = options.lang || $('html').prop('lang');
 
         // Apply preSlug function - if exists
         if (typeof options.preSlug === 'function') {

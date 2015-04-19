@@ -40,6 +40,10 @@
         // Override default options with passed-in options.
         options = $.extend({}, $.slugify.options, options);
 
+        // Guess language specifics from html.lang attribute
+        // when options.lang is not defined
+        options.lang = options.lang || $('html').prop('lang');
+
         // Apply preSlug function - if exists
         if (typeof options.preSlug === 'function') {
             sourceString = options.preSlug(sourceString);

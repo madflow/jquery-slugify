@@ -135,6 +135,29 @@
         }), 'arsch', 'Naughty word appendend preSlug');
     });
 
+    test('test the static lang feature', function() {
+
+        expect(3);
+        strictEqual($.slugify('mäh', {'lang':'hu'}), 'mah',
+            'Hungarian specific lang option');
+        strictEqual($.slugify('mäh', {'lang':'de'}), 'maeh',
+            'German specific lang option');
+        strictEqual($.slugify('mäh'), 'maeh',
+            'Default lang option');
+    });
+
+    test('test the lang feature with HTML lang attribute', function() {
+        expect(3);
+        $('html').prop('lang', 'hu');
+        strictEqual($.slugify('mäh'), 'mah',
+            'Hungarian specific lang with lang attribute');
+        $('html').prop('lang', 'de');
+        strictEqual($.slugify('mäh'), 'maeh',
+            'German specific lang option');
+        $('html').prop('lang', 'hu');
+        strictEqual($.slugify('mäh', {'lang':'de'}), 'maeh',
+            'German specific lang option overrides html attribute');
+    });
 
     QUnit.testDone(function() {
         $('#slug-target').val('');

@@ -1,8 +1,13 @@
 {
   "name": "jquery-slugify",
+  "filename": "slugify",
   "description": "Just another another (another) url slug plugin for jQuery",
   "version": "1.1.0",
   "main": "dist/slugify.min.js",
+  "author": {
+    "name": "madflow",
+    "url": "https://github.com/madflow/jquery-slugify"
+  },
   "scripts": {
     "test": "grunt test"
   },

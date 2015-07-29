@@ -2,7 +2,7 @@
   "name": "jquery-slugify",
   "filename": "slugify",
   "description": "Just another another (another) url slug plugin for jQuery",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "dist/slugify.min.js",
   "author": {
     "name": "madflow",
@@ -19,12 +19,7 @@
     "strings",
     "jquery-plugin"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://raw.githubusercontent.com/madflow/jquery-slugify/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:madflow/jquery-slugify.git"
@@ -41,6 +36,6 @@
     "grunt-contrib-watch": "~0.2.0"
   },
   "dependencies": {
-    "speakingurl": "^3.0.0"
+    "speakingurl": "^5.0.1"
   }
 }

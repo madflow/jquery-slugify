@@ -1,6 +1,6 @@
 {
   "name": "jquery-slugify",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/madflow/jquery-slugify",
   "authors": [
     "madflow"
@@ -14,7 +14,7 @@
   ],
   "dependencies": {
     "jquery": ">=1.7",
-    "speakingurl": "~5.0.1"
+    "speakingurl": "~6.0.0"
   },
   "license": "MIT",
   "ignore": [

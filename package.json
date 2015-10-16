@@ -2,7 +2,7 @@
   "name": "jquery-slugify",
   "filename": "slugify",
   "description": "Just another another (another) url slug plugin for jQuery",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "dist/slugify.min.js",
   "author": {
     "name": "madflow",
@@ -36,6 +36,6 @@
     "grunt-contrib-watch": "~0.6.1"
   },
   "dependencies": {
-    "speakingurl": "^5.0.1"
+    "speakingurl": "^6.0.0"
   }
 }

@@ -1,4 +1,4 @@
-/*! jquery-slugify - v1.2.2 - 2015-10-16
+/*! jquery-slugify - v1.2.3 - 2015-12-23
 * Copyright (c) 2015 madflow; Licensed  */
 ;(function($) {
 

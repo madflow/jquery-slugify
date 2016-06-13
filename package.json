@@ -36,6 +36,6 @@
     "grunt-contrib-watch": "~0.6.1"
   },
   "dependencies": {
-    "speakingurl": "^7.0.0"
+    "speakingurl": "~9.0.0"
   }
 }

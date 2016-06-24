@@ -48,6 +48,11 @@
 <span class="pl-s1">jQuery(<span class="pl-k">function</span>(<span class="pl-smi">$</span>) {</span>
 <span class="pl-s1">  $.slugify(<span class="pl-s"><span class="pl-pds">"</span>Ätschi Bätschi<span class="pl-pds">"</span></span>); <span class="pl-c">// "aetschi-baetschi"</span></span>
 <span class="pl-s1">  $(<span class="pl-s"><span class="pl-pds">'</span>#slug-target<span class="pl-pds">'</span></span>).slugify(<span class="pl-s"><span class="pl-pds">'</span>#slug-source<span class="pl-pds">'</span></span>); <span class="pl-c">// Type as you slug</span></span>
+
+  $(<span class="pl-s"><span class="pl-pds">'</span>#slug-target-1<span class="pl-pds">'</span></span>).slugify(<span class="pl-s"><span class="pl-pds">'</span>#slug-source-1<span class="pl-pds">'</span></span>, {
+    separator: '_' <span class="pl-c">// If you want to change separator from hypen (-) to underscore (_) </span>
+  }); <span class="pl-c"></span></span>
+
 <span class="pl-s1">});</span>
 <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
@@ -65,6 +70,19 @@
                 <input type ="text" value="" id="slug-target" />
               </p>
 
+  <hr>
+  <p>&nbsp;</p>
+      <h2>Demo with Custom Separator</h2>
+
+      <p>
+                <label for="slug-source-1">Title</label>
+                <input type ="text" value="" id="slug-source-1" />
+              </p>
+              <p>
+                <label for="slug-target-1">Slug</label>
+                <input type ="text" value="" id="slug-target-1" />
+              </p>        
+
         </div>
 
         <script src="javascripts/jquery.min.js"></script>
@@ -75,6 +93,10 @@
             $(document).ready(function() {
               console.log($.slugify("Ätschi Bätschi")); // "aetschi-baetschi"
               $('#slug-target').slugify('#slug-source'); // Type as you slug
+
+              $('#slug-target-1').slugify('#slug-source-1', {
+                separator: '_'
+              }); // Type as you slug
             });
         </script>
 

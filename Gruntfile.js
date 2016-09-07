@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     qunit: {
       all: {
         options: {
-          urls: ['1.7.2','1.8.3','1.9.1','1.10.2','1.11.2','2.0.3', '2.1.3'].map(function(version) {
+          urls: ['1.7.2','1.8.3','1.9.1','1.10.2','1.11.2','2.0.3', '2.1.3', '3.0.0', '3.1.0'].map(function(version) {
             return 'http://localhost:<%= connect.server.options.port %>/test/slugify.html?jquery=' + version;
           })
         }

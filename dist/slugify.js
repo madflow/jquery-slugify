@@ -1,9 +1,7 @@
-/*! jquery-slugify - v1.2.4 - 2016-06-15
-* Copyright (c) 2016 madflow; Licensed  */
-;(function($) {
-
+/*! jquery-slugify - v1.2.5 - 2017-10-06
+* Copyright (c) 2017 madflow; Licensed  */
+(function($) {
     $.fn.slugify = function(source, options) {
-
         return this.each(function() {
             var $target = $(this),
                 $source = $(source);
@@ -17,6 +15,11 @@
             });
 
             $source.on('keyup change', function() {
+                // If the target is empty - it cannot be locked
+                if ($target.val() === '' || $target.val() === undefined) {
+                    $target.data('locked', false);
+                }
+
                 if (true === $target.data('locked')) {
                     return;
                 }
@@ -31,7 +34,6 @@
 
     // Static method.
     $.slugify = function(sourceString, options) {
-
         // Override default options with passed-in options.
         options = $.extend({}, $.slugify.options, options);
 
@@ -62,5 +64,4 @@
             return window.getSlug(input, opts);
         }
     };
-
-}(jQuery));
+})(jQuery);

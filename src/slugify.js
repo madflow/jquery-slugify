@@ -1,14 +1,12 @@
 /*
  * https://github.com/madflow/jquery-slugify
  *
- * Copyright (c) 2015 Florian Reiss
+ * Copyright (c) 2015-2017 Florian Reiss
  * Licensed under the MIT license.
  */
 
-;(function($) {
-
+(function($) {
     $.fn.slugify = function(source, options) {
-
         return this.each(function() {
             var $target = $(this),
                 $source = $(source);
@@ -22,6 +20,11 @@
             });
 
             $source.on('keyup change', function() {
+                // If the target is empty - it cannot be locked
+                if ($target.val() === '' || $target.val() === undefined) {
+                    $target.data('locked', false);
+                }
+
                 if (true === $target.data('locked')) {
                     return;
                 }
@@ -36,7 +39,6 @@
 
     // Static method.
     $.slugify = function(sourceString, options) {
-
         // Override default options with passed-in options.
         options = $.extend({}, $.slugify.options, options);
 
@@ -67,5 +69,4 @@
             return window.getSlug(input, opts);
         }
     };
-
-}(jQuery));
+})(jQuery);

@@ -159,6 +159,25 @@
             'German specific lang option overrides html attribute');
     });
 
+    // https://github.com/madflow/jquery-slugify/issues/15
+    test('test locked target should be released', function() {
+
+        $('body').prepend('<input type="text" id="slug-source-locked">');
+        $('body').prepend('<input type="text" id="slug-target-locked">');
+        $('#slug-target-locked').slugify('#slug-source-locked');
+        $('#slug-source-locked').val('Hello    good      Sir!   ').trigger('change');
+        equal($('#slug-target-locked').val(), 'hello-good-sir', "Correct slug in target field change event");
+    
+        $('#slug-target-locked').val('changed').trigger('change');
+        $('#slug-source-locked').val('');
+        $('#slug-target-locked').val('');
+
+        $('#slug-source-locked').val('Hello    good      Sir!   ').trigger('change');
+        equal($('#slug-target-locked').val(), 'hello-good-sir', "Correct slug in target field change event");
+    
+    
+    });
+
     QUnit.testDone(function() {
         $('#slug-target').val('');
         $('#slug-source').val('');

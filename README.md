@@ -9,6 +9,14 @@ Just another another (another) url slug creation plugin for jQuery.
 You can install the plugin using Bower:
 
     bower install jquery-slugify
+    
+You can install the plugin using NPM:
+
+    npm install jquery-slugify --save
+    
+You can install the plugin using YARN:
+
+    yarn add jquery-slugify    
 
 You can download the [production version][min] or the [development version][max].
 
